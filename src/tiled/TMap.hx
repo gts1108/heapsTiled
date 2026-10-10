@@ -37,6 +37,7 @@ class TMap {
 
 		// Parse tilesets
 		for(t in xml.nodes.tileset) {
+			if(!t.has.source) continue;
 			var set = readTileset(folder, t.att.source, Std.parseInt( t.att.firstgid ));
 			tilesets.push(set);
 		}
